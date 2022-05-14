@@ -1,15 +1,16 @@
 package com.hansol.project.dto;
 
-public class TestDTO {
-    String id;
+//domain
+public class HansolDTO {
+    String email;
     String password;
 
-    public String getId() {
-        return id;
+    public String getEmail() {
+        return email$;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {

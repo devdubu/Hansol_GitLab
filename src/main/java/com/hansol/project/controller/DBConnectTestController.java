@@ -1,9 +1,11 @@
 package com.hansol.project.controller;
 
-import com.hansol.project.dao.TestDAO;
+import com.hansol.project.dao.HansolDAO;
+import com.hansol.project.dto.HansolDTO;
 import com.hansol.project.dto.TestDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,11 +15,16 @@ import java.util.List;
 @RequestMapping("/api")
 public class DBConnectTestController {
     @Autowired
-    private TestDAO testDAO;
+    private HansolDAO hansolDAO;
 
-    @GetMapping("/hello")
-    public List<TestDTO> HelloWorld(){
-        return testDAO.getTestData();
+    @GetMapping("/")
+    public List<HansolDTO> HelloWorld(){
+        return hansolDAO.getMemberData();
+    }
+    @PostMapping('/login')
+    public LoginForm Login(){
+        LoginForm form = new LoginForm();
+
     }
 
 }

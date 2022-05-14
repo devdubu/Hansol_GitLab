@@ -7,10 +7,4 @@
         from
             HansolDB
     </select>
-    <select id="setMemberData" resultType="com.hansol.project.dto.HansolDTO">
-        insert HansolDB
-            email, password
-            values(${email}, ${password})
-
-    </select>
 </mapper>
