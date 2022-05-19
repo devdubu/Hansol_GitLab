@@ -1,12 +1,13 @@
-package com.hansol.project.dto;
+package com.hansol.project.domain;
 
 //domain
-public class HansolDTO {
+
+public class HansolDomain {
     String email;
     String password;
 
     public String getEmail() {
-        return email$;
+        return email;
     }
 
     public void setEmail(String email) {

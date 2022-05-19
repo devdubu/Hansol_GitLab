@@ -1,7 +1,6 @@
-package com.hansol.project.dao;
+package com.hansol.project.repository;
 
-import com.hansol.project.dto.TestDTO;
-import org.springframework.stereotype.Service;
+import com.hansol.project.repository.TestDTO;
 
 import java.util.List;
 

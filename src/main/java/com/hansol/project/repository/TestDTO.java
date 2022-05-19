@@ -1,4 +1,4 @@
-package com.hansol.project.dto;
+package com.hansol.project.repository;
 
 public class TestDTO {
     String id;

@@ -1,18 +1,18 @@
 package com.hansol.project.controller;
 
-import com.hansol.project.dao.HansolDAO;
-import com.hansol.project.dto.HansolDTO;
-import com.hansol.project.dto.TestDTO;
+import com.hansol.project.repository.TestDTO;
+import com.hansol.project.service.HansolCRUD;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.util.List;
-
 @Controller
 @RequestMapping("/")
 public class LoginController {
+
+
     @GetMapping("/login")
     public String Join(){
         return  "HansolMemberJoin.html";

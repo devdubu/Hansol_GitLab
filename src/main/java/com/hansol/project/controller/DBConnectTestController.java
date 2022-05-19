@@ -1,8 +1,8 @@
 package com.hansol.project.controller;
 
-import com.hansol.project.dao.HansolDAO;
-import com.hansol.project.dto.HansolDTO;
-import com.hansol.project.dto.TestDTO;
+import com.hansol.project.repository.HansolRepository;
+import com.hansol.project.domain.HansolDomain;
+import com.hansol.project.service.HansolCRUD;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,17 +14,23 @@ import java.util.List;
 @RestController
 @RequestMapping("/api")
 public class DBConnectTestController {
+
+    private final HansolCRUD hansolCRUD;
     @Autowired
-    private HansolDAO hansolDAO;
+    public DBConnectTestController(HansolCRUD hansolCRUD){
+        this.hansolCRUD = hansolCRUD;
+    }
 
+    private HansolDomain hansolDomain;
+
+    @PostMapping("/add")
+    public List<HansolDomain> Login(){
+        return hansolCRUD.inputMemeberData(hansolDomain);
+    }
     @GetMapping("/")
-    public List<HansolDTO> HelloWorld(){
-        return hansolDAO.getMemberData();
+    public List<HansolDomain> HelloWorld(){
+        return hansolCRUD.findMembers();
     }
-    @PostMapping('/login')
-    public LoginForm Login(){
-        LoginForm form = new LoginForm();
 
-    }
 
 }
