@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hansol.CRUDtesk.persistence.BoardMapper">
+    <select id="findBoard" resultType="com.hansol.CRUDtesk.domain.BoardVO">
+        select
+            *
+        from
+            board
+    </select>
+    <insert id="insertBoard" parameterType="com.hansol.CRUDtesk.domain.BoardVO">
+        insert into(
+            title,
+            content
+        )
+        value(
+            title=#{title},
+            content=#{content}
+        )
+    </insert>
+
+</mapper>
